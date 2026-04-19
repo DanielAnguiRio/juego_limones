@@ -90,6 +90,7 @@ function detectarAtrapado(){
             intervalo = setInterval(bajarLimon, velocidadCaida);
         } else if (puntaje === 10) {
             alert("GANARDOR YA TIENES LOS LIMONES SOLO FALTA EL TEQUILA Y LA SAL !!!");
+            clearInterval(intervalo);
         }
     }    
 }
@@ -101,6 +102,7 @@ function detectarPiso(){
         mostrarEnSpan("txtVidas",vidas);
         if(vidas == 0){
             alert ("GAME OVER");
+            clearInterval(intervalo);
         }
     }
 }
