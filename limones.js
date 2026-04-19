@@ -6,17 +6,18 @@ const ALTURA_PERSONAJE=60;
 const ANCHO_PERSONAJE=40;
 const ALTO_LIMON=20;
 const ANCHO_LIMON=20;
-let personajeX=canvas.width/2
-let personajeY=canvas.height-(ALTURA_SUELO+ALTURA_PERSONAJE)
+let personajeX=(canvas.width/2)-(ANCHO_PERSONAJE /2);
+let personajeY=canvas.height-ALTURA_SUELO-ALTURA_PERSONAJE;
 let limonX=canvas.width/2;
 let limonY=20;
 let puntaje=0;
 let vidas=3;
+let velocidadCaida=100;
 
 function iniciar(){
+    setInterval(bajarLimon,100);
     dibujarSuelo();
     dibujarPersonaje();
-    dibujarLimon();
     aparecerLimon();
 }
 
@@ -33,11 +34,17 @@ function dibujarPersonaje(){
 
 function moverIzquierda(){
     personajeX=personajeX-10;
+    if(personajeX < 0){
+        personajeX = 0;
+    }
     actualizarPantalla();
 }
 
 function moverDerecha(){
     personajeX=personajeX+10;
+    if(personajeX + ANCHO_PERSONAJE > canvas.width){
+        personajeX = canvas.width - ANCHO_PERSONAJE;
+    }
     actualizarPantalla();
 }
 
@@ -79,6 +86,9 @@ function detectarPiso(){
         aparecerLimon();
         vidas=vidas-1;
         mostrarEnSpan("txtVidas",vidas);
+        if(vidas == 0){
+            alert ("GAME OVER");
+        }
     }
 }
 
