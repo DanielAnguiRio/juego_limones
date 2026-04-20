@@ -4,6 +4,19 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  position: relative; /* Necesario para el posicionamiento del logo */
+}
+
+/* Estilos para el logo de KrakeDev */
+.logo-superior {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 140px; /* Tamaño sugerido para balance visual */
+  height: auto;
+  z-index: 9999; /* Asegura que esté por encima de todos los elementos */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  pointer-events: none; /* Permite hacer clic a través del logo si algo queda debajo */
 }
 
 .contenedor {
@@ -89,4 +102,16 @@ canvas {
 
 p {
   color: #cbd5f5;
+}
+
+/* Ajuste para que el logo no tape el contenido en pantallas muy pequeñas */
+@media (max-width: 600px) {
+  .logo-superior {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+    top: 0;
+    left: 0;
+    width: 100px;
+  }
 }
