@@ -1,31 +1,92 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
   color: white;
-  text-align: center;
   margin: 0;
-  padding: 20px;
+  padding: 0;
 }
 
 .contenedor {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+h2 {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-bottom: 20px;
 }
 
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
+  background: radial-gradient(circle, #1e293b, #020617);
+  border: 4px solid #38bdf8;
+  border-radius: 12px;
   display: block;
   margin: 20px auto;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 .panel {
+  display: flex;
+  justify-content: space-around;
   margin: 20px 0;
+  padding: 10px;
+  background: rgba(2, 6, 23, 0.6);
+  border-radius: 10px;
+  border: 1px solid #38bdf8;
+}
+
+.panel p {
+  font-size: 18px;
+  margin: 0;
+}
+
+#txtPuntaje {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+#txtVidas {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.botones {
+  margin-top: 20px;
 }
 
 .botones button {
-  margin: 5px;
-  padding: 10px 16px;
+  margin: 8px;
+  padding: 12px 20px;
   font-size: 16px;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.botones button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.botones button:active {
+  transform: scale(0.95);
+}
+
+p {
+  color: #cbd5f5;
 }
